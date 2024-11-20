@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Animted Hamburger Menu</title>
+    <style>
+      .first-bar-style {
+        transform: rotateZ(45deg) translateY(7px);
+      }
+      .second-bar-style {
+        display: none;
+      }
+      .third-bar-style {
+        transform: rotateZ(-45deg) translateY(-7px);
+      }
+
+      #container {
+        display: flex;
+        height: 100vh;
+        justify-content: center;
+        align-items: center;
+      }
+
+      #hamburger-menu {
+        display: block;
+        cursor: pointer;
+        transition: all ease 0.2s;
+      }
+
+      span {
+        display: block;
+        width: 32px;
+        height: 2px;
+        margin-block: 0.5rem;
+        background-color: black;
+        transition: all ease 0.2s;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="container" onclick="ToggleStyles()">
+      <div id="hamburger-menu">
+        <span id="nav-mobile-first-bar"></span>
+        <span id="nav-mobile-second-bar"></span>
+        <span id="nav-mobile-third-bar"></span>
+      </div>
+    </div>
+    <script>
+      const firstNavLine = document.getElementById("nav-mobile-first-bar");
+      const secondNavLine = document.getElementById("nav-mobile-second-bar");
+      const thirdNavLine = document.getElementById("nav-mobile-third-bar");
+
+      function ToggleStyles() {
+        if (firstNavLine.classList.length <= 0) {
+          firstNavLine.classList.add("first-bar-style");
+          secondNavLine.classList.add("second-bar-style");
+          thirdNavLine.classList.add("third-bar-style");
+        } else {
+          firstNavLine.classList.remove("first-bar-style");
+          secondNavLine.classList.remove("second-bar-style");
+          thirdNavLine.classList.remove("third-bar-style");
+        }
+      }
+    </script>
+  </body>
+</html>
